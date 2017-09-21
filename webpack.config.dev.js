@@ -22,7 +22,11 @@ export default {
 				test: /\.js$/,
 				include: path.join(__dirname, 'client'),
 				loaders: ['react-hot', 'babel']
-			}
+			},
+            { test: /\.json$/, loader: "json-loader" },
+            { test: /\.css$/, loader: "style-loader!css-loader" },
+            { test: /\.png$/, loader: "url-loader?limit=100000" },
+            { test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/, loader: 'file' }
 		]
 	},
 	resolve: {
