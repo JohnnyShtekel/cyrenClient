@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export const initStorage = () => {
   try {
     const serializedProducts = JSON.stringify(require('../data/products.json'));
@@ -28,17 +30,12 @@ export const setCart = (cart) => {
     const serializedCart = JSON.stringify(cart);
     localStorage.setItem('reactminicart', serializedCart);
   } catch (e) {
-
   }
 };
 
 export const getProducts = () => {
-  try {
-    return JSON.parse(localStorage.getItem('reactminishop'));
-  } catch (e) {
-    return undefined;
-  }
-}
+    return axios.get('/getProducts')
+};
 
 export const getCart = () => {
   try {

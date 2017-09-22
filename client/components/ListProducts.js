@@ -21,12 +21,13 @@ class ListProducts extends React.Component {
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        products: getProducts(),
-        isLoading: false,
-      });
-    }, 1000);
+      getProducts().then(products => {
+          console.log(products.data);
+          this.setState({
+              products: products.data,
+              isLoading: false,
+          });
+      })
   }
 
   onLikeClick(val) {
