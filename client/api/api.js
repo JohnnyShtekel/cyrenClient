@@ -37,6 +37,11 @@ export const getProducts = () => {
     return axios.get('/getProducts')
 };
 
+
+export const getCategories = () => {
+    return axios.get('/getCategories')
+};
+
 export const getCart = () => {
   try {
     return JSON.parse(localStorage.getItem('reactminicart'));

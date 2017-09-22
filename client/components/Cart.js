@@ -1,5 +1,5 @@
 import React from 'react';
-import { getCart, setCart } from '../api/localstorage.js';
+import { getCart, setCart } from '../api/api.js';
 import Loading from 'react-loading-animation';
 import currency from '../helpers/currency.js';
 import total from '../helpers/total.js';

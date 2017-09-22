@@ -13,69 +13,73 @@
     "liked": false,
     "detail": "<p>best johnny.<br><br>good wulty.</p>",
     "categories": [
-      "phone"
+      "whisky"
     ],
     "comments": [
       {
+        "name": "david",
         "content": "Waaah.. "
       },
       {
+        "name": "Yan",
         "content": "Ahla shel davar"
       }
     ]
   },
   {
     "id": 2,
-    "name": "Smart Phone Apple",
-    "image": "product-2",
-    "price": 10500000,
+    "name": "Dalmore 62 Single Highland Malt Scotch",
+    "image": "http://moneyinc.com/wp-content/uploads/2016/06/Dalmore-62-Single-Highland-Malt-Scotch-750x500.jpg",
+    "price": 10000,
     "stocks": [
       {
         "color": "white",
-        "stock": 50
+        "stock": 2
       }
     ],
     "liked": false,
-    "detail": "<p>This is the details of the Iphone, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+    "detail": "<p>Alexander Matheson built what would become the legendary Dalmore Distillery back in 1839. In 1942, this particular Scotch whiskey was released by Dalmore to honor Matheson. Just 12 bottles were made, which is part of what makes the Matheson 1942 Dalmore Scotch so expensive. Inside is an exquisite whiskey that’s bold and unlike any other.</p>",
     "categories": [
-      "phone"
+      "whisky"
     ],
     "comments": [
       {
-        "content": "Pinter bingit Hpnya!"
+        "name": "Yan",
+        "content": "best !! "
       }
     ]
   },
   {
     "id": 3,
-    "name": "Flatty Phone With Earphone",
-    "image": "product-3",
-    "price": 7500000,
+    "name": " Chateau Margaux 2009 Balthazar",
+    "image": "https://s.financesonline.com/uploads/balthazar.jpg",
+    "price": 4062,
     "stocks": [
       {
         "color": "white",
         "stock": 20
       },
-      {
-        "color": "black",
-        "stock": 10
-      }
-    ],
-    "liked": false,
-    "detail": "<p>This is the details of the Iphone, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+  {
+    "color": "black",
+    "stock": 10
+  }
+],
+"liked": true,
+"detail": "<p>Considered one of the best vintages ever produced by its estate, 2009 Chateau Margaux’s three 12-liter bottles are offered for US$195,000 by exclusive wine merchant Le Clos in Dubai International Airport.Only six Balthazars have been produced, and only three of them are up for sale; all available exclusively through Le Clos. It is housed in a grand case of oak and raised on steel legs, with beautiful gold engravings by master craftsmen.</p>",
     "categories": [
-      "phone"
+      "vine"
     ],
     "comments": [
       {
-        "content": "Earphonenya Mantabs Gan!"
+        "name": "Lior",
+        "content": "Wooowwww !! "
       }
     ]
   },
   {
     "id": 4,
-    "name": "Book And Pen",
-    "image": "product-4",
+    "name": "Yamskaya Russian Vodka",
+    "image": "//s.thestreet.com/files/tsc/v2008/photos/all-pics/food/Yamskaya_inside-large.jpg",
     "price": 150000,
     "stocks": [
       {
@@ -88,69 +92,16 @@
       }
     ],
     "liked": false,
-    "detail": "<p>This is the details of the Iphone, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+    "detail": "<p><br>A Russia made vodka, this bottle was rated a Silver Outstanding at the 2014 International Wine and Spirit Competition.</br><br>Those judging the beverage awarded it such as rating as it is:</br><br>Spicy, peppery and lifted on the nose - elegant and refined. Sweet and viscous on the palate with a round grainy complexity. Long and evolving on the finish.</br></p>",
     "categories": [
-      "accessories"
+      "vodka"
     ],
     "comments": [
       {
-        "content": "Bukunya Elegan! Saya suka dengan Warnanya"
+        "name": "John",
+        "content": "oraaaaaaaa"
       }
     ]
-  },
-  {
-    "id": 5,
-    "name": "An Ipad",
-    "image": "product-5",
-    "price": 10000000,
-    "stocks": [
-      {
-        "color": "black",
-        "stock": 10
-      },
-      {
-        "color": "silver",
-        "stock": 10
-      }
-    ],
-    "liked": false,
-    "detail": "<p>This is the details of the Ipad, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
-    "categories": [
-      "pad"
-    ],
-    "comments": [
-      {
-        "content": "Sukak banget sama yang warna Merah"
-      },
-      {
-        "content": "Barangnya Sampai dengan Selamat Gan, Makasih. Packaging-nya juga bagus! Recommended banget deh pokoknya"
-      }
-    ]
-  },
-  {
-    "id": 6,
-    "name": "Mobile IOS",
-    "image": "product-6",
-    "price": 13000000,
-    "stocks": [
-      {
-        "color": "gold",
-        "stock": 10
-      },
-      {
-        "color": "black",
-        "stock": 10
-      },
-      {
-        "color": "silver",
-        "stock": 10
-      }
-    ],
-    "liked": false,
-    "detail": "<p>This is the details of the Mobile IOS, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
-    "categories": [
-      "phone"
-    ],
-    "comments": []
   }
+
 ]

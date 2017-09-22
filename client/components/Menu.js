@@ -2,6 +2,8 @@ import React from 'react';
 import { Nav, Navbar, NavItem, NavDropdown, MenuItem, FormGroup, FormControl } from 'react-bootstrap';
 import { Link, IndexLink } from 'react-router';
 
+
+
 const styles = {
   textDecoration: 'none',
   textTransform: 'uppercase',
@@ -11,6 +13,8 @@ const styles = {
 }
 
 const Menu = (props) => {
+
+  let categories = props.categories;
   return (
     <Navbar fixedTop>
       <Navbar.Header>
@@ -24,17 +28,13 @@ const Menu = (props) => {
             <i className="ion-ios-cart"></i>
           </button>
         </NavItem>
-        <NavDropdown  eventKey={3} title="" id="basic-nav-dropdown">
-          <MenuItem eventKey={3.1} href='#category/phone'>
-            Phone
-          </MenuItem>
-          <MenuItem eventKey={3.2} href='#category/accessories'>
-            Accessories
-          </MenuItem>
-          <MenuItem eventKey={3.3} href='#category/pad'>
-            Pad
-          </MenuItem>
+
+        <NavDropdown  eventKey={categories.length} title="" id="basic-nav-dropdown">
+            {categories.map(category => (
+                <MenuItem eventKey={3.1} href={'#category/'+category.toLowerCase() }>{category}</MenuItem>
+          ))}
         </NavDropdown>
+
       </Nav>
       <Navbar.Form pullRight>
         <FormGroup>

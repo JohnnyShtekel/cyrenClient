@@ -47,4 +47,15 @@ app.get('/getProducts', (req,res) => {
 
 });
 
+app.get('/getCategories', (req,res) => {
+    let json =  readJSONFile('./client/data/categories.json', function (err, json) {
+        if(err) { throw err; }
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify(json));
+    });
+
+
+});
+
+
 app.listen(3000, () => console.log('running on localhost:3000'));

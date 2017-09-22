@@ -1,7 +1,7 @@
 import React from 'react';
 import Loading from 'react-loading-animation';
 import { find } from 'lodash/collection';
-import { getProducts, getCart, setProducts, setCart } from '../api/localstorage.js';
+import { getProducts, getCart, setProducts, setCart } from '../api/api.js';
 import { normalString } from '../helpers/slug.js';
 import Products from '../components/Products.js';
 import ProductDetail from '../components/ProductDetail.js';
@@ -14,17 +14,17 @@ class ListProducts extends React.Component {
       isLoading: true
     };
 
-    this.onLikeClick = this.onLikeClick.bind(this);
-    this.deleteComment = this.deleteComment.bind(this);
-    this.postComment = this.postComment.bind(this);
-    this.addtoCart = this.addtoCart.bind(this);
-  }
+                  this.onLikeClick = this.onLikeClick.bind(this);
+          this.deleteComment = this.deleteComment.bind(this);
+          this.postComment = this.postComment.bind(this);
+          this.addtoCart = this.addtoCart.bind(this);
+      }
 
-  componentDidMount() {
-      getProducts().then(products => {
-          console.log(products.data);
-          this.setState({
-              products: products.data,
+          componentDidMount() {
+              getProducts().then(products => {
+                  console.log(products.data);
+                  this.setState({
+                      products: products.data,
               isLoading: false,
           });
       })

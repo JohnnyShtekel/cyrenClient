@@ -118,7 +118,7 @@ class ProductDetail extends React.Component {
         <div className='comment-wrapper'>
           <h4>{product.comments.length + ' Comments'}</h4>
           {comments.map((comment, index) => (
-            <Comments key={index} comment={comment.content}
+            <Comments key={index} comment={comment.content} commentName={comment.name}
               delComment={() => this.removeComment(comment.content)}/>
             )
           )}
