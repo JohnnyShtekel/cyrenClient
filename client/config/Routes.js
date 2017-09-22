@@ -4,6 +4,7 @@ import { Route, Router, IndexRoute, hashHistory } from 'react-router';
 import Main from '../components/Main.js';
 import ListProducts from '../components/ListProducts.js';
 import Cart from '../components/Cart.js';
+import MainAdmin from '../components/MainAdmin';
 
 const Routes = () => {
   return (
@@ -14,6 +15,8 @@ const Routes = () => {
         <Route path="product/:name" component={ListProducts} />
         <IndexRoute component={ListProducts} />
       </Route>
+        <Route path="/admin" component={MainAdmin}>
+        </Route>
     </Router>
   );
 };

@@ -42,6 +42,14 @@ export const getCategories = () => {
     return axios.get('/getCategories')
 };
 
+export const login = (email,password) => {
+
+    axios.post('/login', { userName: email, password: password })
+        .then(function(response){
+            console.log('saved successfully')
+        });
+};
+
 export const getCart = () => {
   try {
     return JSON.parse(localStorage.getItem('reactminicart'));

@@ -1,13 +1,19 @@
 import express from 'express';
 import path from 'path';
-var fs = require('fs');
 import webpack from 'webpack';
 import webpackMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import webpackConfig from '../webpack.config.dev';
-
+let fs = require('fs');
+let bodyParser = require('body-parser');
 
 let app = express();
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
 
 const compiler = webpack(webpackConfig)
 
@@ -55,6 +61,20 @@ app.get('/getCategories', (req,res) => {
     });
 
 
+});
+
+
+app.post('/login', function(req, res) {
+
+    res.setHeader('Content-Type', 'application/json');
+    if(req.body.userName === "lior@bizzabo.com" && req.body.password === "1")
+    {
+        res.send(JSON.stringify({"token":"a2e","isLogged": true}))
+    }
+    else {
+        res.send(JSON.stringify({"isLogged": false}))
+    }
+    
 });
 
 
