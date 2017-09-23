@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "./Login.css";
-import { login } from '../api/api.js';
+
 
 export default class Login extends Component {
     constructor(props) {
@@ -23,6 +23,8 @@ export default class Login extends Component {
         return this.state.email.length > 0 && this.state.password.length > 0;
     }
 
+
+
     handleEmailChange(event) {
 
         this.setState({
@@ -38,16 +40,20 @@ export default class Login extends Component {
     }
 
     handleSubmitA(event) {
-        event.preventDefault()
-        login(this.state.email,this.state.password)
+        event.preventDefault();
+
     }
 
 
 
     render() {
+
+        let email = this.state.email;
+        let password = this.state.password;
+
         return (
             <div className="Login">
-                <form onSubmit={this.handleSubmitA}>
+                <form >
                     <FormGroup controlId="email" bsSize="large">
                         <ControlLabel>Email</ControlLabel>
                         <FormControl
@@ -70,9 +76,10 @@ export default class Login extends Component {
                         bsSize="large"
                         disabled={!this.validateForm()}
                         type="submit"
+                        onClick={(e)=>this.props.onClick(e,email,password)}
                     >
                         Login
-                    </Button>
+                    </Button >
                 </form>
             </div>
         );

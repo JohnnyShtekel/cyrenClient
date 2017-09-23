@@ -44,10 +44,8 @@ export const getCategories = () => {
 
 export const login = (email,password) => {
 
-    axios.post('/login', { userName: email, password: password })
-        .then(function(response){
-            console.log('saved successfully')
-        });
+    return axios.post('/login', { userName: email, password: password })
+
 };
 
 export const getCart = () => {
@@ -60,6 +58,6 @@ export const getCart = () => {
 
 export const removeStorage = () => {
   window.onunload = function() {
-    localStorage.clear();
+    // localStorage.clear();
   };
 };

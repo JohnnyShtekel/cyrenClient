@@ -3,8 +3,10 @@ import ProgressBar from 'react-progress-bar-plus';
 
 import 'react-progress-bar-plus/lib/progress-bar.css';
 import '../components/main.css';
-import { getCategories } from '../api/api.js';
 import Login from './Login'
+import Menu from './Menu'
+import { login } from '../api/api.js';
+import Main from "./Main";
 
 class MainAdmin extends React.Component {
 
@@ -13,66 +15,75 @@ class MainAdmin extends React.Component {
         this.state = {
             categories: [],
             isLodaing:false,
-            isLoged:false
+                isLogged:false,
+                    token: ""
         };
-    }
 
-    handleSubmit(email,password) {
+    this.handleLoginSubmit =  this.handleLoginSubmit.bind(this);
 
-        console.log("email: " +email);
-        console.log("pass: " +password)
-    }
+}
 
-    handleSearch(e) {
-        e.preventDefault;
-        if (e.charCode == 13 && e.target.value.length > 0) {
-            let encodeUri = encodeURIComponent(e.target.value);
-            this.props.router.push('/?q=' + encodeUri);
-            e.target.value = '';
-        } else {
-            e.target.focus();
+handleLoginSubmit(e,email,pass)
+{
+    e.preventDefault();
+    login(email,pass).then(response =>{
+        if(response.data.isLogged && response.data.access_token !== undefined) {
+            localStorage.setItem('access_token', response.data.access_token);
+            this.setState({
+                token: response.data.access_token,
+                isLogged: true,
+            });
+
+
         }
+        else {
+            toastr.error('The user or the password are incorrect!.', 'Login')
+        }
+    });
+}
+
+handleSearch(e) {
+    e.preventDefault;
+    if (e.charCode == 13 && e.target.value.length > 0) {
+        let encodeUri = encodeURIComponent(e.target.value);
+        this.props.router.push('/?q=' + encodeUri);
+        e.target.value = '';
+    } else {
+        e.target.focus();
     }
+}
 
-    scrolltoTop(scrollDuration) {
-        const scrollHeight = window.scrollY;
-        const scrollStep = Math.PI / ( scrollDuration / 15 );
-        const cosParameter = scrollHeight / 2;
-        let scrollCount = 0;
-        let scrollMargin;
-        const scrollInterval = setInterval(() => {
-            if (window.scrollY != 0) {
-                scrollCount = scrollCount + 1;
-                scrollMargin = cosParameter - cosParameter * Math.cos(scrollCount * scrollStep);
-                window.scrollTo(0, ( scrollHeight - scrollMargin ));
-            }
-            else clearInterval(scrollInterval);
-        }, 15);
-    }
+scrolltoTop(scrollDuration) {
+    const scrollHeight = window.scrollY;
+    const scrollStep = Math.PI / ( scrollDuration / 15 );
+    const cosParameter = scrollHeight / 2;
+    let scrollCount = 0;
+    let scrollMargin;
+    const scrollInterval = setInterval(() => {
+        if (window.scrollY != 0) {
+            scrollCount = scrollCount + 1;
+            scrollMargin = cosParameter - cosParameter * Math.cos(scrollCount * scrollStep);
+            window.scrollTo(0, ( scrollHeight - scrollMargin ));
+        }
+        else clearInterval(scrollInterval);
+    }, 15);
+}
 
-    render() {
+render() {
 
-        let isLogged = this.state.isLoged;
-
-        if (!isLogged)
-        {
-            return <Login onClick={this.handleSubmit.bind(this)} />
-        }else {
+    let token = localStorage.getItem("access_token");
+    let isLogged = this.state.isLogged;
+    if (isLogged === false && token === null) {
+            return <Login onClick={this.handleLoginSubmit.bind(this)}/>
+        }else if(isLogged || token !== null )
+            {
             return (
                 <div>
                     <ProgressBar percent={100} />
-                    <Menu onSearch={this.handleSearch.bind(this)} categories={this.state.categories} ></Menu>
-                    <div className='main-wrapper'>
-                        {this.props.children}
-                    </div>
-                    <a onClick={this.scrolltoTop.bind(this, 1000)} className="back-to-top">
-                        <i className="ion-chevron-up"></i>
-                    </a>
+                    <Main/>
                 </div>
             );
         }
-
-
     }
 }
 
