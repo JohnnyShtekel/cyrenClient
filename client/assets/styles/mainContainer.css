@@ -1,0 +1,18 @@
+#vcontainer {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+#hcontainer {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+#content {
+  display: inline-block;
+  border: lightGray 1px solid;
+  background-color: #dad7d7;
+  text-align: left;
+    height: 824px;
+  width: 1000px;
+}

@@ -2,8 +2,7 @@ import React from 'react';
 import ProgressBar from 'react-progress-bar-plus';
 import 'react-progress-bar-plus/lib/progress-bar.css';
 import {login} from '../api/ClientApi'
-
-
+import '../assets/styles/mainContainer.css'
 
 class Main extends React.Component {
 
@@ -19,6 +18,10 @@ class Main extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+
+       this.props.router.push('/login');
+
+
         let loginInput = this.refs.login;
         console.log(this.refs.login.value);
         login('yoni',"1").then(respone => {
@@ -40,13 +43,17 @@ class Main extends React.Component {
   render() {
     let state = this.state.loginState;
     return (
-      <div>
-        <h1>State: {state}</h1>
+        <div id="vcontainer"><div id="hcontainer">
+            <div id="content">
+            <h1>State: {state}</h1>
         <form onSubmit={ this.handleSubmit }>
         <input placeholder="githug login" ref="login" />
         <button>Login</button>
       </form>
-      </div>
+            </div>
+        </div>
+        </div>
+
     );
   }
 }

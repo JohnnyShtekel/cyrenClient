@@ -6,7 +6,7 @@ import Login from '../components/Login';
 
 const Routes = () => {
   return (
-    <Router onUpdate={() => window.scrollTo(0, 0)} history={hashHistory}>
+    <Router  onUpdate={() => window.scrollTo(0, 0)} history={hashHistory}>
       <Route path="/" component={Main}/>
           <Route path="/login" component={Login}/>
 
