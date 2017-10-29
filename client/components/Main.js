@@ -36,7 +36,7 @@ class Main extends React.Component {
 
 
 
-    
+
   render() {
     let state = this.state.loginState;
     return (
