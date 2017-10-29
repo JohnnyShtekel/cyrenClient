@@ -9,15 +9,15 @@ class Main extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            hello:"dsadasd"
         };
     }
 
   render() {
-
+    let a = this.state.hello;
     return (
       <div>
-        <h1>Hello Web Pos</h1>
+        <h1>Hello Web Pos {a}</h1>
       </div>
     );
   }

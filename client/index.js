@@ -9,10 +9,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Routes from './config/Routes.js';
-import { initStorage, removeStorage } from './api/api.js';
 
-initStorage();
-removeStorage();
 
 const rootElement = document.getElementById('app');
 

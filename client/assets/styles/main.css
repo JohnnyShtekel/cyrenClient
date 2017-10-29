@@ -696,3 +696,13 @@ footer a:hover {
 .price {
   width: 25%;
 }
+
+
+
+
+.btn span.icon {
+    background: url(./symbols-keypad-confirm-button.png) no-repeat;
+    float: left;
+    width: 500px;
+    height: 500px;
+}
