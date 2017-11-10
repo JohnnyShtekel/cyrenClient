@@ -3,6 +3,7 @@ import ProgressBar from 'react-progress-bar-plus';
 import 'react-progress-bar-plus/lib/progress-bar.css';
 import {login} from '../api/ClientApi'
 import '../assets/styles/mainContainer.css'
+import Menu from '../components/Menu'
 
 class Main extends React.Component {
 
@@ -45,11 +46,7 @@ class Main extends React.Component {
     return (
         <div id="vcontainer"><div id="hcontainer">
             <div id="content">
-            <h1>State: {state}</h1>
-        <form onSubmit={ this.handleSubmit }>
-        <input placeholder="githug login" ref="login" />
-        <button>Login</button>
-      </form>
+            <Menu/>
             </div>
         </div>
         </div>
