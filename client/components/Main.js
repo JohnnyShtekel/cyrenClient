@@ -44,11 +44,12 @@ class Main extends React.Component {
   render() {
     let state = this.state.loginState;
     return (
-        <div id="vcontainer"><div id="hcontainer">
-            <div id="content">
-            <Menu/>
-            </div>
-        </div>
+        <div className="vcontainer">
+            <div className="hcontainer">
+                 <div className="content">
+                         <Menu/>
+                 </div>
+             </div>
         </div>
 
     );

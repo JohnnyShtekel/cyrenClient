@@ -1,14 +1,14 @@
-#vcontainer {
+.vcontainer {
   display: table;
   height: 100%;
   width: 100%;
 }
-#hcontainer {
+.hcontainer {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
 }
-#content {
+.content {
   display: inline-block;
   border: lightGray 1px solid;
   background-color: #dad7d7;
