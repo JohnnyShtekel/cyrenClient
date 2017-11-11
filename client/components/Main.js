@@ -29,9 +29,7 @@ class Main extends React.Component {
             console.log(respone);
             if(respone.data.access_token)
             {
-                 this.setState({
-                loginState: "logged In"
-            });
+
             }
 
         })
@@ -47,6 +45,7 @@ class Main extends React.Component {
         <div className="vcontainer">
             <div className="hcontainer">
                  <div className="content">
+                     <ProgressBar percent={100} />
                          <Menu/>
                  </div>
              </div>
