@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Router, IndexRoute, hashHistory } from 'react-router';
 import Main from '../components/Main.js';
 import Login from '../components/Login';
-import Register from '../components/Register';
+import Register from '../components/RegisterModal';
 
 
 const Routes = () => {

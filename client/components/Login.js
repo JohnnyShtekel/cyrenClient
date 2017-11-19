@@ -3,60 +3,79 @@ import ProgressBar from 'react-progress-bar-plus';
 import 'react-progress-bar-plus/lib/progress-bar.css';
 import {getTime,getFullDate} from '../helpers/DateHelper'
 import LoginModal from './LoginModal'
-import {login, isLoggedin, isRegister} from '../api/ClientApi'
-
-
+import RegisterModal from './RegisterModal'
+import {login, isLoggedin, isRegistered, register} from '../api/ClientApi'
 
 class Login extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            data: {},
             isLoading: false,
             token: '',
             pos: '1',
             touchPoint: '1',
             date: new Date().getDate(),
             time: new Date().getTime(),
+            isShowingLoginModal: false,
+            isShowingRegisterModal: false
         }
 
-        this.handleModalChange = this.handleModalChange.bind(this);
+        this.handleLoginModalChange = this.handleLoginModalChange.bind(this);
+        this.handleRegisterModalChange = this.handleRegisterModalChange.bind(this);
         this.handleLogin = this.handleLogin.bind(this);
-
+        this.handleRegister = this.handleRegister.bind(this);
     }
 
     componentWillMount() {
 
-        isRegister("1").then(isRegister => {
-            if(isRegister)
+       isRegistered("1").then(isRegistered => {
+
+            if(isRegistered == false)
             {
-                this.props.router.push('/register');
+                this.setState({
+                    isShowingRegisterModal: true,
+                    isShowingLoginModal: false,
+                });
+            }
+
+            if(isRegistered)
+            {
+                isLoggedin().then(isLoggedin => {
+                    if(isLoggedin)
+                    {
+                        this.props.router.push('/main');
+                    }
+                });
             }
         });
 
-        isLoggedin().then(isLogged => {
-            if(isLogged)
-            {
-                this.props.router.push('/main');
-            }
-        });
-
-        this.setState({
+       this.setState({
             pos: "1",
             touchPoint: "1",
             date: getFullDate(),
             time: getTime(),
-            isShowingModal: false
+            isShowingRegisterModal: false
+
         });
 
     }
 
-    handleModalChange(e) {
+    handleLoginModalChange(e) {
         e.preventDefault();
-        let modalState = this.state.isShowingModal;
+        let modalState = this.state.isShowingLoginModal;
+
+        console.log("modalState in function:" + modalState);
         this.setState({
-            isShowingModal: !modalState
+            isShowingLoginModal: !modalState
+        })
+    }
+
+    handleRegisterModalChange(e) {
+        e.preventDefault();
+        let modalState = this.state.isShowingRegisterModal;
+        this.setState({
+            isShowingRegisterModal: !modalState
         })
     }
 
@@ -66,27 +85,43 @@ class Login extends React.Component {
             isLoading :true
         });
 
-        login(user,password).then(isLogged => {
-            if(isLogged)
+        login(user,password).then(isLoggedin => {
+            if(isLoggedin)
             {
                 this.props.router.push('/main');
             }
-
         })
+    }
 
-
+    handleRegister(user, password, tpId)
+    {
+        register(user,password,tpId).then(isRegistered => {
+            if(isRegistered)
+            {
+                this.setState({
+                    isShowingRegisterModal: false,
+                    isShowingLoginModal: true,
+                });
+            }
+        })
     }
 
      render() {
-        let {pos,date, time, isShowingModal,isLoading} = this.state;
+        let {pos,date, time, isShowingRegisterModal, isShowingLoginModal, isLoading} = this.state;
+
+         console.log("modalState in render:" + isShowingLoginModal);
+
         return (
             <div className="vcontainer">
                 <div className="hcontainer">
 
                     <div className="content" id="gradLogin">
                         <ProgressBar percent={100} />
-                        <LoginModal isShowingModal={isShowingModal}
-                                    onClose={this.handleModalChange} onLogin={this.handleLogin} isLoading={isLoading}  />
+                        <LoginModal isShowingLoginModal={isShowingLoginModal}
+                                    onClose={this.handleLoginModalChange} onLogin={this.handleLogin}  />
+
+                        <RegisterModal isShowingRegisterModal={isShowingRegisterModal}
+                                    onClose={this.handleRegisterModalChange} onRegister={this.handleRegister} />
                         <div className="row">
                             <div className="col s12 m4 l2"></div>
 
@@ -103,27 +138,21 @@ class Login extends React.Component {
                                     <div className="row hoverable">
                                         <font size="4"> hello, please login </font>
                                     </div>
-
-
                                 </div>
                             </div>
                             <div className="card-image waves-effect waves-block waves-light">
                                 <img className="circle" src="http://learnenglishteens.britishcouncil.org/sites/teens/files/rs5994_465129591-low.jpg" height="250" width="20"/>
                             </div>
                             <div className="card-content">
-                                <a  onClick={this.handleModalChange} className="waves-effect waves-light btn">Login</a>
+                                <a  onClick={this.handleLoginModalChange} className="waves-effect waves-light btn">Login</a>
                             </div>
-
-
                         </div>
                         </div>
-
                         </div>
                         <div className="col s12 m4 l2"></div>
                     </div>
                 </div>
             </div>
-
         );
       }
     }

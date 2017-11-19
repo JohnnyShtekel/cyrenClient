@@ -22,22 +22,15 @@ class Main extends React.Component {
 
        this.props.router.push('/login');
 
-
         let loginInput = this.refs.login;
         console.log(this.refs.login.value);
-        login('yoni',"1").then(respone => {
+        login("1","1").then(respone => {
             console.log(respone);
             if(respone.data.access_token)
             {
-
             }
-
         })
-
     }
-
-
-
 
   render() {
     let state = this.state.loginState;

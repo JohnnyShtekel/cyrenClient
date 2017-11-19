@@ -6,7 +6,7 @@ export const login = (email,password) => {
 
     let promise =  axios.post('/login', { userName: email, password: password }).then(respone => {
                     let isLogged = false;
-                    if(respone.data.access_token && respone.data.isLogged)
+                    if(respone.data.access_token && respone.data.isLoggedin)
                     {
                         isLogged = true
                         localStorage.setItem(localStorageTokenKey, respone.data.access_token);
@@ -49,26 +49,44 @@ export const isLoggedin =() => {
     return promise;
 };
 
+export const register = (userName,password,tpId) => {
 
-
-export const register =() => {
-
-    return true
-};
-
-export const isRegister =(pos) => {
-
-    let promise =  axios.post('/isRegister', { pos: pos}).then(respone => {
+    let promise =  axios.post('/register', { userName: userName, password: password, tpId: tpId }).then(respone => {
         let isRegister = false;
-        if(respone.data.isRegister)
+        if(respone.data.access_token && respone.data.isRegistered)
         {
             isRegister = true
+            localStorage.setItem(localStorageTokenKey, respone.data.access_token);
         }
-
+        else
+        {
+            Materialize.toast('Wrong user details', 4000)
+        }
         return isRegister
 
     }).catch(function (error) {
-        console.log("rest: isRegister error: " + error);
+        console.log("rest: register error: " + error);
+        Materialize.toast('unhandled error please contacts your administrator', 4000)
+        return false
+    });
+
+    return promise;
+
+};
+
+export const isRegistered =(pos) => {
+
+    let promise =  axios.post('/isRegistered', { pos: pos}).then(respone => {
+        let isRegistered = false;
+        if(respone.data.isRegistered)
+        {
+            isRegistered = true
+        }
+
+        return isRegistered
+
+    }).catch(function (error) {
+        console.log("rest: isRegistered error: " + error);
         return false
     });
 

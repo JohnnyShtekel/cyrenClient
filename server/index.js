@@ -50,14 +50,14 @@ app.post('/login', function(req, res) {
     let MockToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2V4YW1wbGUuYXV0aDAuY29tLyIsImF1ZCI6Imh0dHBzOi8vYXBpLmV4YW1wbGUuY29tL2NhbGFuZGFyL3YxLyIsInN1YiI6InVzcl8xMjMiLCJpYXQiOjE0NTg3ODU3OTYsImV4cCI6MTQ1ODg3MjE5Nn0.CA7eaHjIHz5NxeIJoFK9krqaeZrPLwmMmgI_XiQiIkQ"
 
     res.setHeader('Content-Type', 'application/json');
-    if(req.body.userName === "yoni" && req.body.password === "1")
+    if(req.body.userName === "1" && req.body.password === "1")
     {
-        console.log({"isLogged": true});
-        res.send(JSON.stringify({"access_token":MockToken,"isLogged": true}))
+        console.log({"isLoggedin": true});
+        res.send(JSON.stringify({"access_token":MockToken,"isLoggedin": true}))
     }
     else {
-        console.log({"isLogged": false});
-        res.send(JSON.stringify({"isLogged": false}))
+        console.log({"isLoggedin": false});
+        res.send(JSON.stringify({"isLoggedin": false}))
     }
 
 });
@@ -69,17 +69,48 @@ app.post('/isLoggedin', function(req, res) {
     res.setHeader('Content-Type', 'application/json');
     if(req.body.access_token === MockToken )
     {
-        console.log({"isLogged": true});
-        res.send(JSON.stringify({"isLogged": true}))
+        console.log({"isLoggedin": true});
+        res.send(JSON.stringify({"isLoggedin": true}))
     }
     else {
-        console.log({"isLogged": false});
-        res.send(JSON.stringify({"isLogged": false}))
+        console.log({"isLoggedin": false});
+        res.send(JSON.stringify({"isLoggedin": false}))
     }
 
 });
 
+app.post('/register', function(req, res) {
 
+    let MockToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2V4YW1wbGUuYXV0aDAuY29tLyIsImF1ZCI6Imh0dHBzOi8vYXBpLmV4YW1wbGUuY29tL2NhbGFuZGFyL3YxLyIsInN1YiI6InVzcl8xMjMiLCJpYXQiOjE0NTg3ODU3OTYsImV4cCI6MTQ1ODg3MjE5Nn0.CA7eaHjIHz5NxeIJoFK9krqaeZrPLwmMmgI_XiQiIkQ"
+
+    res.setHeader('Content-Type', 'application/json');
+    if(req.body.userName === "1" && req.body.password === "1")
+    {
+        console.log({"isRegistered": true});
+        res.send(JSON.stringify({"access_token":MockToken,"isRegistered": true}))
+    }
+    else {
+        console.log({"isRegistered": false});
+        res.send(JSON.stringify({"isRegistered": false}))
+    }
+
+});
+
+app.post('/isRegistered', function(req, res) {
+
+    let MockToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2V4YW1wbGUuYXV0aDAuY29tLyIsImF1ZCI6Imh0dHBzOi8vYXBpLmV4YW1wbGUuY29tL2NhbGFuZGFyL3YxLyIsInN1YiI6InVzcl8xMjMiLCJpYXQiOjE0NTg3ODU3OTYsImV4cCI6MTQ1ODg3MjE5Nn0.CA7eaHjIHz5NxeIJoFK9krqaeZrPLwmMmgI_XiQiIkQ"
+
+    res.setHeader('Content-Type', 'application/json');
+    if(req.body.access_token === MockToken )
+    {
+        console.log({"isRegistered": true});
+        res.send(JSON.stringify({"isRegistered": true}))
+    }
+    else {
+        console.log({"isRegistered": false});
+        res.send(JSON.stringify({"isRegistered": false}))
+    }
+});
 
 
 app.listen(5000, () => console.log('running on localhost:5000'));
