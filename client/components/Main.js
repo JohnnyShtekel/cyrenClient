@@ -1,50 +1,38 @@
 import React from 'react';
 import ProgressBar from 'react-progress-bar-plus';
 import 'react-progress-bar-plus/lib/progress-bar.css';
-import {login} from '../api/ClientApi'
-import '../assets/styles/mainContainer.css'
-import Menu from '../components/Menu'
+import Login from './Login'
+import UserBoard from './UserBoard'
 
 class Main extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            loginState:"please login",
-            button: "login"
+            isLogin:false,
+            userName:""
         };
 
          this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(e) {
-        e.preventDefault();
+        console.log(e)
+        this.setState({
+            isLogin: true,
+            userName:e
+        });
 
-       this.props.router.push('/login');
 
-        let loginInput = this.refs.login;
-        console.log(this.refs.login.value);
-        login("1","1").then(respone => {
-            console.log(respone);
-            if(respone.data.access_token)
-            {
-            }
-        })
     }
 
-  render() {
-    let state = this.state.loginState;
-    return (
-        <div className="vcontainer">
-            <div className="hcontainer">
-                 <div className="content">
-                     <ProgressBar percent={100} />
-                         <Menu/>
-                 </div>
-             </div>
-        </div>
 
-    );
+
+  render() {
+    let {isLogin,userName} = this.state;
+      if (isLogin != false) {
+          return <UserBoard userName={userName}/>
+      } else return <Login onLogin={this.handleSubmit}/>;
   }
 }
 
