@@ -5,38 +5,21 @@ import webpackMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import webpackConfig from '../webpack.config.dev';
 let fs = require('fs');
+const http = require('http');
 let bodyParser = require('body-parser');
-
+var request = require('request');
 let app = express();
-
-// parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
-
-// parse application/json
 app.use(bodyParser.json());
-
 const compiler = webpack(webpackConfig);
+var CONFIG = require('./config.json');
 
-
-function readJSONFile(filename, callback) {
-    fs.readFile(filename, function (err, data) {
-        if(err) {
-            callback(err);
-            return;
-        }
-        try {
-            callback(null, JSON.parse(data));
-        } catch(exception) {
-            callback(exception);
-        }
-    });
-}
 
 
 app.use(webpackMiddleware(compiler, {
 	hot:true,
 	publicPath: webpackConfig.output.publicPath,
-	noInfo: true 
+	noInfo: true
 }));
 app.use(webpackHotMiddleware(compiler));
 
@@ -44,28 +27,74 @@ app.get('/', (req,res) => {
 	res.sendFile(path.join(__dirname,'./index.html'));
 });
 
+ // --------- Client Controllers --------------------------------------//
+
 
 app.post('/login', function(req, res) {
 
-    let MockToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2V4YW1wbGUuYXV0aDAuY29tLyIsImF1ZCI6Imh0dHBzOi8vYXBpLmV4YW1wbGUuY29tL2NhbGFuZGFyL3YxLyIsInN1YiI6InVzcl8xMjMiLCJpYXQiOjE0NTg3ODU3OTYsImV4cCI6MTQ1ODg3MjE5Nn0.CA7eaHjIHz5NxeIJoFK9krqaeZrPLwmMmgI_XiQiIkQ"
-
+    var url = CONFIG.targetServer + '/api/'+ req.body.userName;
     res.setHeader('Content-Type', 'application/json');
-    if(req.body.userName === "1" && req.body.password === "1")
-    {
-        console.log({"isLoggedin": true});
-        res.send(JSON.stringify({"access_token":MockToken,"isLoggedin": true}))
-    }
-    else {
-        console.log({"isLoggedin": false});
-        res.send(JSON.stringify({"isLoggedin": false}))
-    }
+    let clientResponse = {};
+    request(url, function (error, response, body) {
+          if(response.body != '') {
+            clientResponse['body'] = body;
+            clientResponse['isLoggedin'] = true;
+            res.send(clientResponse);
+          }
+          else {
+              clientResponse['isLoggedin'] = false;
+            res.send(clientResponse)
+          }});
+});
+
+
+app.post('/update', function(req, res) {
+    var url = CONFIG.targetServer + '/api/update';
+    res.setHeader('Content-Type', 'application/json');
+    let clientResponse = {};
+    let reqbody = req.body.user;
+
+
+    request.post({
+      url:     url,
+      form:    JSON.stringify(reqbody)
+    }, function(error, response, body){
+        if(response.body != '') {
+            clientResponse['body'] = body;
+            clientResponse['isDataSet'] = true;
+            res.send(clientResponse);
+          }
+          else {
+            clientResponse['isDataSet'] = false;
+            res.send(clientResponse);
+        }
+    });
 
 });
 
 
+app.post('/users', function(req, res) {
+    var url = CONFIG.targetServer + '/api/users';
+    res.setHeader('Content-Type', 'application/json');
+    let clientResponse = {};
+    let connectedUserId = req.body.connectedUserId;
+
+    request.post({
+      url:     url,
+      form:    JSON.stringify(connectedUserId)
+    }, function(error, response, body){
+        if(response.body != '') {
+            clientResponse['body'] = body;
+            clientResponse['isRecivedUsers'] = true;
+            res.send(clientResponse);
+          }
+          else {
+            clientResponse['isRecivedUsers'] = false;
+            res.send(clientResponse);
+        }
+    });
+
+});
 
 
-
-
-
-app.listen(5000, () => console.log('running on localhost:5000'));
+app.listen(CONFIG.nodePort, () => console.log('running on localhost:'+ CONFIG.nodePort));

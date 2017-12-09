@@ -1,0 +1,4 @@
+{
+    "nodePort": 5000,
+    "targetServer": "http://127.0.0.1:8000"
+}

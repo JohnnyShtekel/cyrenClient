@@ -28,18 +28,20 @@
     "axios": "^0.16.2",
     "body-parser": "^1.18.2",
     "express": "^4.14.0",
+    "express-http-proxy": "^1.1.0",
+    "jquery": "^3.2.1",
     "material-ui": "^0.19.4",
     "prop-types": "^15.5.10",
     "react": "^15.3.0",
     "react-bootstrap": "^0.31.3",
+    "react-bootstrap-table": "^4.2.0",
     "react-dom": "^15.3.0",
     "react-loading-animation": "^1.1.0",
-    "react-modal-dialog": "^4.0.7",
-    "react-progress-bar-plus": "^1.2.0",
-    "react-progressive-image": "^0.1.2",
     "react-router": "^3.0.0",
     "react-router-dom": "^4.2.2",
     "react-screen-keyboard": "^1.4.1",
-    "react-spinjs": "^3.0.0"
+    "react-select": "^1.1.0",
+    "react-spinjs": "^3.0.0",
+    "request": "^2.83.0"
   }
 }

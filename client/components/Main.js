@@ -1,8 +1,7 @@
 import React from 'react';
-import ProgressBar from 'react-progress-bar-plus';
-import 'react-progress-bar-plus/lib/progress-bar.css';
 import Login from './Login'
 import UserBoard from './UserBoard'
+import {login, setUserStatus} from '../api/ClientApi'
 
 class Main extends React.Component {
 
@@ -10,28 +9,50 @@ class Main extends React.Component {
         super(props);
         this.state = {
             isLogin:false,
-            userName:""
+            user:{}
         };
 
          this.handleSubmit = this.handleSubmit.bind(this);
+         this.handleStatusChange = this.handleStatusChange.bind(this);
     }
 
-    handleSubmit(e) {
-        console.log(e)
-        this.setState({
-            isLogin: true,
-            userName:e
+
+    handleStatusChange(status) {
+        let user = this.state.user;
+        setUserStatus(user,status.value).then(user => {
+            if (user.isDataSet) {
+                this.setState({
+                    user: JSON.parse(user.body)
+                });
+            }
+            else {
+                Materialize.toast('failed to update status', 4000)
+            }
         });
+    }
 
 
+    
+    handleSubmit(userName) {
+        login(userName).then(user => {
+            if (user.isLoggedin) {
+                console.log(user.body);
+                this.setState({
+                    isLogin: true,
+                    user: JSON.parse(user.body)
+                });
+            } else {
+                Materialize.toast('user name is not exist', 4000)
+            }
+        });
     }
 
 
 
   render() {
-    let {isLogin,userName} = this.state;
+    let {isLogin,user} = this.state;
       if (isLogin != false) {
-          return <UserBoard userName={userName}/>
+          return <UserBoard OnStatusChange={this.handleStatusChange} user={user}/>
       } else return <Login onLogin={this.handleSubmit}/>;
   }
 }

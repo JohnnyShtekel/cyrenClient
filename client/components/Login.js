@@ -1,7 +1,5 @@
 import React from 'react';
-import ProgressBar from 'react-progress-bar-plus';
-import 'react-progress-bar-plus/lib/progress-bar.css';
-
+// import '../assets/styles/main.css'
 
 class Login extends React.Component {
 
@@ -11,13 +9,14 @@ class Login extends React.Component {
             inputValue:""
         };
 
-         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleLogin = this.handleLogin.bind(this);
+
     }
-
-    handleSubmit(e) {
+    
+    handleLogin(e)
+    {
         e.preventDefault();
-        console.log(this.state.inputValue)
-
+        this.props.onLogin(this.state.inputValue)
     }
 
     updateInputValue(evt) {
@@ -30,7 +29,6 @@ class Login extends React.Component {
       let {inputValue} = this.state;
     return (
         <div className="container" >
-            <ProgressBar/>
             <div className="card">
             <div className="container">
               <h3>Welcome to MyWorkStatus</h3>
@@ -42,7 +40,7 @@ class Login extends React.Component {
             <input value={this.state.inputValue}  onChange={evt => this.updateInputValue(evt)} className="input col s2" type="text" />
 
             </p>
-            <button onClick={()=>{this.props.onLogin(inputValue)}} className="waves-effect waves-light btn">Login</button>
+            <button onClick={this.handleLogin} className="waves-effect waves-light btn">Login</button>
             </form>
             </div>
         </div>
