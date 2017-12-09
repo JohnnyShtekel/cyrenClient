@@ -3,18 +3,26 @@
 
 
 #PreSetup
-1. if you in the work lan, please connect to US vpn.
-2. open a new user in github
-3. download npm and install - https://nodejs.org/en/download/
-4. enter cmd, pick a folder to the project and clone the project:  git clone https://github.com/JohnnyShtekel/WebPos.git
+  - enter to config.json (~\CyrenClinet\server\config.json)
+  - set client port
+  - set server url include port if need
+  
+
 
 #setup
-#install packages
-npm install
+    - install packages: npm install
+    - start server : npm run server
+    
+    
+    #if there is problem, ask Yoni.
 
-#start server
-npm run server
-
-#if there is problem, ask Yoni.
-
+```
+``` bash
+config.json:
+```
+```json
+{
+    "nodePort": 5000,
+    "targetServer": "http://127.0.0.1:8000"
+}
 ```

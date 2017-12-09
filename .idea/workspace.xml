@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd5afbce-3e47-4d92-9e25-a09bab8634af" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/components/UserListFilterTable.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/mappers/userMapper.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/config.json" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/assets/styles/mainContainer.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/assets/styles/symbols-keypad-confirm-button.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/components/KeyBoard.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/components/LoginModal.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/components/Menu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/helpers/DateHelper.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/api/ClientApi.js" afterPath="$PROJECT_DIR$/client/api/ClientApi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/assets/styles/main.css" afterPath="$PROJECT_DIR$/client/assets/styles/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/components/Login.js" afterPath="$PROJECT_DIR$/client/components/Login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/components/Main.js" afterPath="$PROJECT_DIR$/client/components/Main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/components/UserBoard.js" afterPath="$PROJECT_DIR$/client/components/UserBoard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/config/Routes.js" afterPath="$PROJECT_DIR$/client/config/Routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/index.html" afterPath="$PROJECT_DIR$/server/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/index.js" afterPath="$PROJECT_DIR$/server/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.config.dev.js" afterPath="$PROJECT_DIR$/webpack.config.dev.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -95,16 +76,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/assets/styles/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="6" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ClientApi.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/api/ClientApi.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -129,22 +100,49 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="328">
               <caret line="47" column="0" selection-start-line="4" selection-start-column="24" selection-end-line="47" selection-end-column="0" />
+              <folding>
+                <marker date="1512822312175" expanded="true" signature="0:1303" ph="{&quot;name&quot;: &quot;CyrenClient&quot;...}" />
+                <marker date="1512822312175" expanded="true" signature="742:1301" ph="{&quot;axios&quot;: &quot;^0.16.2&quot;...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/config.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor>
+                <js_state />
+              </second_editor>
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="119">
+                <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="35" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -220,7 +218,6 @@
         <option value="$PROJECT_DIR$/client/components/cars.js" />
         <option value="$PROJECT_DIR$/client/components/Carousels.js" />
         <option value="$PROJECT_DIR$/client/helpers/total.js" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/client/api/api.js" />
         <option value="$PROJECT_DIR$/client/helpers/DateHelper.js" />
         <option value="$PROJECT_DIR$/client/assets/styles/mainContainer.css" />
@@ -246,6 +243,7 @@
         <option value="$PROJECT_DIR$/client/components/UserListFilterTable.js" />
         <option value="$PROJECT_DIR$/client/api/ClientApi.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -797,13 +795,6 @@
     <entry file="file://$PROJECT_DIR$/client/data/products.json" />
     <entry file="file://$PROJECT_DIR$/client/data/categories.json" />
     <entry file="file://$PROJECT_DIR$/client/data/cart.json" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/assets/styles/symbols-keypad-confirm-button.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -835,14 +826,6 @@
     <entry file="file://$PROJECT_DIR$/client/components/LoginModal.js" />
     <entry file="file://$PROJECT_DIR$/client/components/KeyBoard.js" />
     <entry file="file://$PROJECT_DIR$/client/helpers/StatusHelper.js" />
-    <entry file="file://$PROJECT_DIR$/server/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/config/Routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -968,7 +951,49 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
           <caret line="47" column="0" selection-start-line="4" selection-start-column="24" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <marker date="1512822312175" expanded="true" signature="0:1303" ph="{&quot;name&quot;: &quot;CyrenClient&quot;...}" />
+            <marker date="1512822312175" expanded="true" signature="742:1301" ph="{&quot;axios&quot;: &quot;^0.16.2&quot;...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding>
+              <marker date="1512823016108" expanded="true" signature="311:380" ph="{&quot;nodePort&quot;: 5000...}" />
+            </folding>
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="119">
+            <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="35" />
+            <folding>
+              <marker date="1512823016108" expanded="true" signature="311:380" ph="{&quot;nodePort&quot;: 5000...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
